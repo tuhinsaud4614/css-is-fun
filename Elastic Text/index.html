@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Elastic Text</title>
+    <link rel="stylesheet" href="./style.css" />
+  </head>
+
+  <body>
+    <p id="text">Elastic Text</p>
+    <script>
+      const textNode = document.getElementById("text");
+      const text = textNode.textContent;
+      textNode.innerHTML = "";
+      text.split("").forEach((item) => {
+        const childNode = document.createElement("span");
+        childNode.innerText = item;
+        textNode.appendChild(childNode);
+        if(item === " ") {
+            childNode.style.display = "inline"
+        }
+      });
+    </script>
+  </body>
+</html>
